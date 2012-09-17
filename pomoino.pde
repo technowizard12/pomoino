@@ -7,11 +7,13 @@
   Material: Arduino, 2 leds, and a buzzer (of course, a resistor for each component).
   How to use: set the time in minutes for your task/rest and
   upload to your arduino, changing the pin numbers properly.
+  
+  Edited by Simon Orr to be play nice with a Dorkboard.
 */
 
 
 int buzzerPin = 10;
-int redPin = 11;
+int redPin = 13;
 int greenPin = 12;
 
 
@@ -31,7 +33,7 @@ void stopWarning()
 
 void startTaskTime(int minutes)
 {
-  digitalWrite(redPin, HIGH);
+  digitalWrite(redPin, LOW);
   int seconds = minutes * 60;
   int cycles = seconds / 2;
   for(int i = 1; i <= cycles; i++)
