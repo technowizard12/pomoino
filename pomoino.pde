@@ -11,7 +11,7 @@
 
 
 int buzzerPin = 10;
-int redPin = 11;
+int redPin = 13;
 int greenPin = 12;
 
 
@@ -31,7 +31,7 @@ void stopWarning()
 
 void startTaskTime(int minutes)
 {
-  digitalWrite(redPin, HIGH);
+  digitalWrite(redPin, LOW);
   int seconds = minutes * 60;
   int cycles = seconds / 2;
   for(int i = 1; i <= cycles; i++)
@@ -43,7 +43,7 @@ void startTaskTime(int minutes)
     digitalWrite(buzzerPin, LOW);
     delay(1000);
   }
-  digitalWrite(redPin, LOW);  
+  digitalWrite(redPin, HIGH);  
 }
 
 
